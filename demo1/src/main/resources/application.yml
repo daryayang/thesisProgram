@@ -1,0 +1,75 @@
+server:
+  port: 9999
+
+
+  # okhttp3配置
+ok:
+  http:
+    connect-timeout: 30
+    read-timeout: 30
+    write-timeout: 30
+    # 连接池中整体的空闲连接的最大数量
+    max-idle-connections: 200
+    # 连接空闲时间最多为 300 秒
+    keep-alive-duration: 300
+
+#????????????
+spring:
+  datasource:
+    username: root
+    password: yangzl6271!
+#    ????????????localhost??????????????mysql:///xdb
+    url: jdbc:mysql://localhost:3306/thesis
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+#redis?????
+  redis:
+      port: 6379
+      host: localhost
+
+
+  jackson:
+    #?????
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      #?????
+      indent_output: true
+      #?????????
+      fail_on_empty_beans: false
+    #????????
+    defaultPropertyInclusion: NON_EMPTY
+    deserialization:
+      #??????json???????
+      fail_on_unknown_properties: false
+    parser:
+      #????????????
+      allow_unquoted_control_chars: true
+      #???????
+      allow_single_quotes: true
+
+# MyBatis ??
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+mybatis-plus:
+  # ???????????????Sql??????????????????
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ??????
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    #xml????
+  mapper-locations: classpath:mapper/*.xml
+
+xuanyuan:
+  apiKey: zYaAZVFxfqL5P4HGM8dAbass
+  secretKey: RvKE1ERgvrcwtgHEXCwtLsD4GQ8IRvSC
+  accessTokenUrl: https://aip.baidubce.com/oauth/2.0/token
+  4bit.0URL: https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/xuanyuan_70b_chat

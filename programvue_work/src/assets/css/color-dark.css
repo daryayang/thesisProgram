@@ -1,0 +1,33 @@
+.header{
+    background-image: url("../img/pkuheader4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+        
+}
+.login-wrap{
+    background: #eef1f6;
+}
+.plugins-tips{
+    background: #eef1f6;
+}
+.plugins-tips a{
+    color: #20a0ff;
+}
+
+.tags-li.active {
+    border: 1px solid #409EFF;
+    background-color: #409EFF;
+}
+.message-title{
+    color: #20a0ff;
+}
+.collapse-btn:hover{
+    background: #eef1f6;
+}
+.compressed-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  
